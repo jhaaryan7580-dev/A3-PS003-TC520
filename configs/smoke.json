@@ -1,0 +1,2 @@
+{"epochs": 2, "rounds": 3, "local_epochs": 1, "batch": 1024, "lr": 0.001, "seeds": [0],
+ "horizon": 1, "lags": 12, "n_clients": 5, "subsample_train": 100000}
