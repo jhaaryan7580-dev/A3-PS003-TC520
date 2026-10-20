@@ -1,0 +1,26 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+venv/
+env/
+.env
+.env.*
+.DS_Store
+data/*.npz
+data*.npz
+**/data*.npz
+artifacts/*.npz
+artifacts/demo_smoke/
+artifacts/reproduced_*/
+artifacts/heldout_trace_data/
+TEAM_ONLY/
+node_modules/
+*.npz
+# The compiled portable app must be committed for no-Node review.
+!prototype/dist/
+!prototype/dist/**
+
+# Browser-generated receipts/traces are local demonstrations, not frozen evidence.
+**/local_forecast_receipt.json
+**/local_heldout_trace*.json

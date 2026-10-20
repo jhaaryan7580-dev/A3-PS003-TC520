@@ -1,0 +1,6 @@
+# Actual validation environment recorded in artifacts/environment.json
+numpy==2.5.3
+scipy==1.18.1
+pytest==9.1.1
+matplotlib==3.11.2
+# Python runtime: 3.12.3
