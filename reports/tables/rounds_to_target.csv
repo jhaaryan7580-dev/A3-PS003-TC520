@@ -1,0 +1,13 @@
+phase,condition,seed,target_validation_mae,first_hit_round,first_hit_payload_bytes,selected_round,completed_run_bytes
+primary,fedavg_iid,0,14.247688579559327,3,61560,30,615600
+primary,fedavg_iid,1,14.223784160614015,2,41040,29,615600
+primary,fedavg_iid,2,14.24922366142273,3,61560,30,615600
+primary,fedavg_non_iid,0,14.247688579559327,9,184680,26,615600
+primary,fedavg_non_iid,1,14.223784160614015,6,123120,30,615600
+primary,fedavg_non_iid,2,14.24922366142273,4,82080,26,615600
+diagnostic,fedavg_iid,0,14.247688579559327,3,61560,92,2052000
+diagnostic,fedavg_iid,1,14.223784160614015,2,41040,97,2052000
+diagnostic,fedavg_iid,2,14.24922366142273,3,61560,97,2052000
+diagnostic,fedavg_non_iid,0,14.247688579559327,9,184680,96,2052000
+diagnostic,fedavg_non_iid,1,14.223784160614015,6,123120,98,2052000
+diagnostic,fedavg_non_iid,2,14.24922366142273,4,82080,89,2052000
