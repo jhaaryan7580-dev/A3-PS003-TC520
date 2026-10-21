@@ -1,0 +1,13 @@
+{
+  "purpose": "smoke test only, validation split, 200k-window subset, 2 epochs; not a result",
+  "train_windows": 2098136,
+  "val_windows": 448263,
+  "train_loss_per_epoch_scaled": [
+    0.18326620046450084,
+    0.043257813877508704
+  ],
+  "val_mae_flow_units": 19.08534049987793,
+  "seconds_build": 0.8190040588378906,
+  "seconds_train_200k_x2epochs": 0.1826009750366211,
+  "est_seconds_full_epoch": 0.9578041983985901
+}

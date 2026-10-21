@@ -1,0 +1,124 @@
+{
+  "source_file": "/home/claude/chauraha/data/PEMS08.npz",
+  "sha256": "e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075",
+  "shape": [
+    17856,
+    170,
+    3
+  ],
+  "target_channel": 0,
+  "channel_means": [
+    230.68069424678473,
+    0.06507109045566921,
+    63.76299625764021
+  ],
+  "nan": 0,
+  "inf": 0,
+  "zero_flow_entries": 10560,
+  "zero_flow_fraction": 0.003478810879190386,
+  "max_zero_run": 400,
+  "mean_zero_run": 2.005317128750475,
+  "sensors_with_any_zero": 50,
+  "worst_sensor_zero_fraction_train": 0.10848867909432755,
+  "lag288_autocorr": 0.8375476724778936,
+  "split_bounds": {
+    "train": [
+      0,
+      12499
+    ],
+    "val": [
+      12499,
+      15177
+    ],
+    "test": [
+      15177,
+      17856
+    ]
+  },
+  "phase_offsets_global_t_mod_288": {
+    "train": 0,
+    "val": 115,
+    "test": 201
+  },
+  "windows": {
+    "train": {
+      "unfiltered": 2122790,
+      "complete_case": 2098136,
+      "dropped_fraction": 0.011613960872248308
+    },
+    "val": {
+      "unfiltered": 453220,
+      "complete_case": 448263,
+      "dropped_fraction": 0.01093729314681613
+    },
+    "test": {
+      "unfiltered": 453390,
+      "complete_case": 448533,
+      "dropped_fraction": 0.010712631509296577
+    }
+  },
+  "scaler_train_valid_only": {
+    "mean": 231.02791173468833,
+    "std": 145.488614559463
+  },
+  "training_flow_upload_reference_bytes": 8499320,
+  "full_stream_flow_reference_bytes": 12142080,
+  "partitions": {
+    "iid": {
+      "by_seed": {
+        "0": {
+          "sizes": [
+            34,
+            34,
+            34,
+            34,
+            34
+          ],
+          "sensor_mean_w1": 28.407035118273598,
+          "pooled_value_w1": 22.404994000000002
+        },
+        "1": {
+          "sizes": [
+            34,
+            34,
+            34,
+            34,
+            34
+          ],
+          "sensor_mean_w1": 30.08511455774102,
+          "pooled_value_w1": 26.483841
+        },
+        "2": {
+          "sizes": [
+            34,
+            34,
+            34,
+            34,
+            34
+          ],
+          "sensor_mean_w1": 30.792521451007236,
+          "pooled_value_w1": 26.618558999999998
+        }
+      }
+    },
+    "non_iid": {
+      "sizes": [
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "sensor_mean_w1": 127.86674238716974,
+      "pooled_value_w1": 127.50906500000004
+    },
+    "definitions": {
+      "sensor_mean_w1": "primary: W1 between client distributions of per-sensor valid training means",
+      "pooled_value_w1": "secondary: W1 between clients' pooled valid training flow values"
+    }
+  },
+  "sensor_train_mean_flow": {
+    "min": 10.462750217580504,
+    "max": 460.786445831333
+  }
+}
