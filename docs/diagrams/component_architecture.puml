@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+skinparam backgroundColor white
+skinparam componentStyle uml2
+skinparam defaultFontName Arial
+skinparam defaultFontSize 18
+skinparam componentBackgroundColor #F4F6FA
+skinparam componentBorderColor #1B365D
+skinparam ArrowColor #1B365D
+skinparam packageBorderColor #8098AC
+skinparam shadowing false
+package "Frozen NumPy scientific core" {
+ component "Data / chronological windows\n(data.py)" as D
+ component "Experiment runner\n(run_experiments.py)" as R
+ component "Training / FedAvg\n(train.py) · 5 virtual clients" as T
+ component "MLP + Adam\n(models.py) · 14–32–1" as M
+ component "Validation / test metrics\n(metrics.py)" as E
+}
+artifact "Frozen evidence\n15 primary + 6 diagnostic JSONs\n2 validation-selected checkpoints" as A
+package "Portable prototype — no training in the browser" {
+ component "React lab interface\nForecast / Evidence / Federation" as UI
+ component "Verified forward pass\n(engine.ts) · 513 parameters" as F
+ component "Local NPZ decoder\n(dataset.ts) · hash + window guards" as N
+}
+R ..> D : split / partition
+R ..> T : configs + seeds
+T ..> M : fit / average weights
+T ..> E : validation select / test score
+R --> A : result JSONs
+T --> A : selected weights via exporter
+UI ..> A : immutable evidence
+UI ..> F : actual one-point inference
+F ..> A : reads saved parameters / scaler
+UI ..> N : user-selected local file
+N --> F : 12 positive lag flows + global index
+@enduml
