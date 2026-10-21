@@ -1,0 +1,22 @@
+
+> chauraha-sync-prototype@1.0.0 test /home/ubuntu/ps003-submission-20261020/A3-PS003-TC520/prototype
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/ps003-submission-20261020/A3-PS003-TC520/prototype
+
+stdout | client/src/lib/engine.test.ts > centralised browser/NumPy parity > verifies the supplied checkpoint and predicts all 40 diagnostic histories
+[unit parity] centralised: max abs difference 0.00006937437751730613
+
+stdout | client/src/lib/engine.test.ts > fedavg_non_iid browser/NumPy parity > verifies the supplied checkpoint and predicts all 40 diagnostic histories
+[unit parity] fedavg_non_iid: max abs difference 0.00004335898594831633
+
+ ✓ client/src/lib/engine.test.ts (9 tests) 32ms
+ ✓ client/src/lib/comparison.test.ts (7 tests) 21ms
+ ✓ client/src/lib/dataset.test.ts (6 tests) 438ms
+
+ Test Files  3 passed (3)
+      Tests  22 passed (22)
+   Start at  15:44:51
+   Duration  861ms (transform 212ms, setup 0ms, collect 327ms, tests 491ms, environment 1ms, prepare 298ms)
+

@@ -1,0 +1,11 @@
+{
+  "status": "published",
+  "url": "https://chaurahalab-gzh27d5b.manus.space",
+  "version_id": "c9c2cebf3d45243dae306f5d18134a1c0510c982",
+  "initial_audited_version_id": "c63ad641b36095e4c341de1f7634317c3ce3bcb2",
+  "date": "2026-10-19",
+  "change_scope": "Documentation-only: correct the standalone report publication-status paragraph, remove two unlinked stale Markdown copies, and update the optional UI checker to report observed hosting telemetry separately. No application inference code, checkpoints, result JSONs or presentation metrics changed.",
+  "user_github_modified": false,
+  "live_browser_receipt": "artifacts/PROTOTYPE_V3_LIVE_BROWSER_CHECKS.json",
+  "browser_receipt_scope": "19 controls on the initial published application. Inference/assets are unchanged in the documentation-only refresh. Hosting telemetry is reported; no application-origin POST or raw NPZ transfer was observed in the tested workflow. Not a platform-wide privacy audit."
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "published_version": "c9c2cebf3d45243dae306f5d18134a1c0510c982",
+  "live_report_http": 200,
+  "canonical_report_sha256": "e1394b8c3b2c20d06c61cb19b4a137659ee64d8e658b9e2b5b02274efeb37134",
+  "live_report_source_meta_matches": true,
+  "obsolete_hosting_claim_removed": true,
+  "shared_application_source_matches": true,
+  "note": "Hosted HTML includes injected hosting scripts, so transport bytes are not expected to equal standalone local HTML. Independent portable-build bundle hashes can differ by dependency tree."
+}

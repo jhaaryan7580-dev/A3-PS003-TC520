@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Real isolated Chromium UI checks; not training, city validation, performance experiment or certification",
+  "checks": [
+    "Manual inference compares three predictors without invented truth",
+    "Zero manual input rejected and old receipt cleared",
+    "Held-out FedAvg inference matches fixed NumPy reference to displayed precision",
+    "Contiguous illustration computes three local score rows",
+    "Out-of-range sensor does not crash or keep a stale comparison",
+    "Valid sensor recovers real inference",
+    "Rejected replacement keeps explicit usable verified dataset",
+    "Inference still works after rejected replacement",
+    "Persistence is in RMSE comparison with frozen value",
+    "Deterministic persistence remains explicit under seed selector",
+    "100-to-30-round switch resets safely",
+    "Visible mentor pseudocode contains weighted aggregation and validation selection",
+    "Both matched validation histories and descriptive target are displayed",
+    "Missing clipboard API produces useful fallback instead of crashing",
+    "Verified dataset remains in memory across workspace navigation",
+    "Unload returns to manual mode without old recorded truth",
+    "Narrow viewport does not force whole-page horizontal scrolling",
+    "No unhandled browser errors",
+    "Application made no POST/upload requests"
+  ],
+  "unhandled_errors": [],
+  "post_requests": []
+}

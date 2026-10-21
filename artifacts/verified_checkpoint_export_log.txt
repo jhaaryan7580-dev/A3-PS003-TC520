@@ -1,0 +1,6 @@
+Fixed conditions centralised and fedavg_non_iid; fixed seed 0; unchanged 30-pass primary configs.
+Reproducing centralised seed0...
+PASS centralised: original metrics/history match; selected {'val_mae': 13.56922721862793, 'epoch': 29}; test MAE 13.877108369; 29.4s
+Reproducing fedavg_non_iid seed0...
+PASS fedavg_non_iid: original metrics/history match; selected {'val_mae': 13.936659812927246, 'round': 26}; test MAE 14.218150408; 30.7s
+Both original JSONs preserved. Verified checkpoint export complete.

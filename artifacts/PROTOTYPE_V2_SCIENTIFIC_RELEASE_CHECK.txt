@@ -1,0 +1,9 @@
+.......................................................                  [100%]
+55 passed in 3.02s
+PASS: all checks passed
+PASS: all checks passed
+[pytest] /usr/bin/python3 -m pytest -q
+[full 15] /usr/bin/python3 src/check_results.py --dir results/full_results --config configs/full.json
+[diagnostic 6] /usr/bin/python3 src/check_results.py --dir results/diagnostic_100rounds --config configs/diagnostic_100rounds.json --conditions fedavg_iid fedavg_non_iid
+[source manifest] checked 41 entries
+RELEASE PASS: tests and saved-result gates passed

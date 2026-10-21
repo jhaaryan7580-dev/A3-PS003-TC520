@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "url": "https://chaurahalab-gzh27d5b.manus.space",
+  "scope": "Real isolated Chromium UI checks; not training, city validation, performance experiment or certification. No raw dataset transfer observed; this is not a platform-wide privacy audit.",
+  "checks": [
+    "Manual inference compares three predictors without invented truth",
+    "Zero manual input rejected and old receipt cleared",
+    "Held-out FedAvg inference matches fixed NumPy reference to displayed precision",
+    "Contiguous illustration computes three local score rows",
+    "Out-of-range sensor does not crash or keep a stale comparison",
+    "Valid sensor recovers real inference",
+    "Rejected replacement keeps explicit usable verified dataset",
+    "Inference still works after rejected replacement",
+    "Persistence is in RMSE comparison with frozen value",
+    "Deterministic persistence remains explicit under seed selector",
+    "100-to-30-round switch resets safely",
+    "Visible mentor pseudocode contains weighted aggregation and validation selection",
+    "Both matched validation histories and descriptive target are displayed",
+    "Missing clipboard API produces useful fallback instead of crashing",
+    "Verified dataset remains in memory across workspace navigation",
+    "Unload returns to manual mode without old recorded truth",
+    "Narrow viewport does not force whole-page horizontal scrolling",
+    "No unhandled browser errors",
+    "No unexpected or application-origin POST/upload requests; known hosting telemetry reported separately"
+  ],
+  "unhandled_errors": [],
+  "post_requests": [
+    {
+      "host": "api.manus.im",
+      "path": "/api/user_behavior/batch_create_event_v2",
+      "method": "POST",
+      "resource_type": "ping",
+      "body_bytes": 460,
+      "classification": "hosting telemetry"
+    },
+    {
+      "host": "manus-analytics.com",
+      "path": "/api/send",
+      "method": "POST",
+      "resource_type": "fetch",
+      "body_bytes": 279,
+      "classification": "hosting telemetry"
+    },
+    {
+      "host": "api2.amplitude.com",
+      "path": "/2/httpapi",
+      "method": "POST",
+      "resource_type": "ping",
+      "body_bytes": 3774,
+      "classification": "hosting telemetry"
+    },
+    {
+      "host": "api2.amplitude.com",
+      "path": "/2/httpapi",
+      "method": "POST",
+      "resource_type": "ping",
+      "body_bytes": 5911,
+      "classification": "hosting telemetry"
+    },
+    {
+      "host": "api2.amplitude.com",
+      "path": "/2/httpapi",
+      "method": "POST",
+      "resource_type": "ping",
+      "body_bytes": 21734,
+      "classification": "hosting telemetry"
+    }
+  ],
+  "hosting_telemetry_allowed": true
+}

@@ -1,0 +1,91 @@
+Generated /home/ubuntu/ps003-final-delivery/A3-PS003-TC520/figures/heldout_forecast_examples.png. Raw excerpt CSV is local-only and excluded from the release archive.
+{
+  "selection_rule": "upper-median valid-training-mean sensor within preset Q1/Q3/Q5; no test-error selection",
+  "span_rule": "first 288 target-index slots after the test split lag boundary",
+  "span": [
+    15189,
+    15477
+  ],
+  "seed": 0,
+  "segments": [
+    {
+      "canonical_group": "Q1",
+      "sensor_index": 156,
+      "valid_training_mean": 97.13571257101704,
+      "eligible_segment_windows": 288,
+      "segment_metrics": {
+        "centralised": {
+          "mae": 10.49116690472271,
+          "rmse": 14.016056417241156,
+          "relative_abs_error": 0.12307858027394188,
+          "n": 288
+        },
+        "fedavg_non_iid": {
+          "mae": 10.827471326704902,
+          "rmse": 14.28598842702021,
+          "relative_abs_error": 0.12702398226528602,
+          "n": 288
+        },
+        "persistence": {
+          "mae": 12.576389434938672,
+          "rmse": 16.679995077292933,
+          "relative_abs_error": 0.14754165772805097,
+          "n": 288
+        }
+      }
+    },
+    {
+      "canonical_group": "Q3",
+      "sensor_index": 31,
+      "valid_training_mean": 239.13785102808225,
+      "eligible_segment_windows": 288,
+      "segment_metrics": {
+        "centralised": {
+          "mae": 13.866074742257524,
+          "rmse": 18.828839210040528,
+          "relative_abs_error": 0.05768351183155201,
+          "n": 288
+        },
+        "fedavg_non_iid": {
+          "mae": 13.659534950397276,
+          "rmse": 18.57348933872172,
+          "relative_abs_error": 0.05682429675093885,
+          "n": 288
+        },
+        "persistence": {
+          "mae": 15.774305548315445,
+          "rmse": 21.21164824690839,
+          "relative_abs_error": 0.06562184018507804,
+          "n": 288
+        }
+      }
+    },
+    {
+      "canonical_group": "Q5",
+      "sensor_index": 3,
+      "valid_training_mean": 355.00640051204095,
+      "eligible_segment_windows": 288,
+      "segment_metrics": {
+        "centralised": {
+          "mae": 26.306217265362235,
+          "rmse": 37.102901927459264,
+          "relative_abs_error": 0.07381755139072121,
+          "n": 288
+        },
+        "fedavg_non_iid": {
+          "mae": 26.411704854863885,
+          "rmse": 37.43598328554183,
+          "relative_abs_error": 0.0741135588128668,
+          "n": 288
+        },
+        "persistence": {
+          "mae": 28.74652828515961,
+          "rmse": 40.66115967343086,
+          "relative_abs_error": 0.0806652780059205,
+          "n": 288
+        }
+      }
+    }
+  ],
+  "scope": "illustrative segments only, not full-test or three-seed claims"
+}

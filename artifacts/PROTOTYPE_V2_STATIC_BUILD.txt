@@ -1,0 +1,13 @@
+
+> chauraha-sync-prototype@1.0.0 build:static /home/ubuntu/ps003-submission-20261020/A3-PS003-TC520/prototype
+> vite build
+
+vite v7.1.9 building for production...
+transforming...
+✓ 2199 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                   0.67 kB │ gzip:   0.41 kB
+../dist/public/assets/index-Dh4HvXvy.css   20.07 kB │ gzip:   5.05 kB
+../dist/public/assets/index-CVwEcMYR.js   657.34 kB │ gzip: 191.72 kB
+✓ built in 5.59s

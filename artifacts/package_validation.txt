@@ -1,0 +1,65 @@
+
+=== validation run 2026-10-19T10:56:19Z ===
+...............................F                                         [100%]
+=================================== FAILURES ===================================
+________ test_result_checker_passes_good_results_and_catches_corruption ________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-6/test_result_checker_passes_goo0')
+
+    def test_result_checker_passes_good_results_and_catches_corruption(tmp_path):
+        import check_results as C
+        f = flow()
+        cfg = {**CFG, "seeds": [0, 1]}
+        for cond in CONDS:
+            for sd in cfg["seeds"]:
+                r = T.run_condition(f, cfg, cond, sd, dataset_sha="abc")
+                (tmp_path / f"{cond}_seed{sd}.json").write_text(json.dumps(r))
+        assert C.check_dir(tmp_path, cfg) == []
+        p = tmp_path / "fedavg_iid_seed0.json"
+        r = json.loads(p.read_text()); r["communication"]["bytes_per_round"] = 1; p.write_text(json.dumps(r))
+        assert any("bytes/round" in x for x in C.check_dir(tmp_path, cfg))
+        (tmp_path / "centralised_seed1.json").unlink()
+>       assert any("missing centralised_seed1" in x for x in C.check_dir(tmp_path, cfg))
+E       assert False
+E        +  where False = any(<generator object test_result_checker_passes_good_results_and_catches_corruption.<locals>.<genexpr> at 0x7f705c35bac0>)
+
+tests/test_train.py:106: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_train.py::test_result_checker_passes_good_results_and_catches_corruption
+1 failed, 31 passed in 3.05s
+PASS: all checks passed
+PASS: all checks passed
+[pytest] /usr/bin/python3 -m pytest -q
+[full 15] /usr/bin/python3 src/check_results.py --dir results/full_results --config configs/full.json
+[diagnostic 6] /usr/bin/python3 src/check_results.py --dir results/diagnostic_100rounds --config configs/diagnostic_100rounds.json --conditions fedavg_iid fedavg_non_iid
+[source manifest] checked 40 entries
+RELEASE FAIL:
+  pytest
+verify_release_exit=1
+
+=== validation run 2026-10-19T10:56:35Z ===
+................................                                         [100%]
+32 passed in 3.07s
+PASS: all checks passed
+PASS: all checks passed
+[pytest] /usr/bin/python3 -m pytest -q
+[full 15] /usr/bin/python3 src/check_results.py --dir results/full_results --config configs/full.json
+[diagnostic 6] /usr/bin/python3 src/check_results.py --dir results/diagnostic_100rounds --config configs/diagnostic_100rounds.json --conditions fedavg_iid fedavg_non_iid
+[source manifest] checked 40 entries
+RELEASE PASS: tests and saved-result gates passed
+verify_release_exit=0
+
+=== compatibility validation run 2026-10-19T10:57:14Z ===
+................................                                         [100%]
+32 passed in 2.74s
+PASS: all checks passed
+................................                                         [100%]
+32 passed in 2.66s
+PASS: all checks passed
+PASS: all checks passed
+[pytest] /usr/bin/python3 -m pytest -q
+[full 15] /usr/bin/python3 src/check_results.py --dir results/full_results --config configs/full.json
+[diagnostic 6] /usr/bin/python3 src/check_results.py --dir results/diagnostic_100rounds --config configs/diagnostic_100rounds.json --conditions fedavg_iid fedavg_non_iid
+[source manifest] checked 40 entries
+RELEASE PASS: tests and saved-result gates passed
+pytest_exit=0 subset_exit=0 verify_release_exit=0

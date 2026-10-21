@@ -1,0 +1,1 @@
+PASS: regenerated summary exactly matches frozen JSON; all frozen table/figure hashes unchanged; project root, reports, figures, nested frozen path and nonempty output rejected.

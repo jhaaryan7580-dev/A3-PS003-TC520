@@ -1,0 +1,47 @@
+{
+  "dataset_sha256": "e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075",
+  "config_hash": "e01612b17a75ef4b938b7089ced20cb1048991b9e9e652bf235b026b1c333557",
+  "source_sha256": {
+    "src/data.py": "b5226a4eeef02fc716d57ceb6c9bb4c5482a48e5454dcbbba9d77b7bbec655c7",
+    "src/models.py": "bbb5010025aac4d507fe0a58d08968520057be6dbcab63b186bb65d9e672c749",
+    "src/train.py": "5f59405aa4f25e2d6484ae4575408b01f7ab1a2117210430cad9e36f8e851703",
+    "src/metrics.py": "7b3209c5e99e10febb88d8bf93172adc58d127f77ee4c4b0bc58f2519f16bece",
+    "src/meta.py": "458e4dfbd45ddac5ea93150f4f015a95964b8c70f5e493cf2937517b0c15f8f0"
+  },
+  "runs": {
+    "centralised": {
+      "path": "checkpoints/centralised_seed0.json",
+      "parameter_sha256": "90490a21f641e053716f20487af3748e742837d4a7e6d8cd55def822e7b70dc9",
+      "best_checkpoint": {
+        "val_mae": 13.56922721862793,
+        "epoch": 29
+      },
+      "test_overall": {
+        "mae": 13.877108368754898,
+        "rmse": 21.082855822951526,
+        "relative_abs_error": 0.05945250364629137,
+        "n": 448533
+      },
+      "max_abs_float_difference": 3.2867397692371014e-10,
+      "reproduction_seconds": 29.438829323997197,
+      "weight_roundtrip": "bit-exact float32"
+    },
+    "fedavg_non_iid": {
+      "path": "checkpoints/fedavg_non_iid_seed0.json",
+      "parameter_sha256": "644bbdd0a994c9103bdf33dec621409803846befcc14bd9ad1cb85beb26ef23e",
+      "best_checkpoint": {
+        "val_mae": 13.936659812927246,
+        "round": 26
+      },
+      "test_overall": {
+        "mae": 14.21815040789462,
+        "rmse": 21.375990053612437,
+        "relative_abs_error": 0.06091360076657799,
+        "n": 448533
+      },
+      "max_abs_float_difference": 5.547988735088438e-10,
+      "reproduction_seconds": 30.719199532002676,
+      "weight_roundtrip": "bit-exact float32"
+    }
+  }
+}

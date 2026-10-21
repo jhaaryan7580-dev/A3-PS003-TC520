@@ -1,0 +1,4 @@
+PASS: final documents, compiled resources and relative links complete.
+PASS: all 21 browser evidence references match frozen JSONs; dataset/scalars/identities agree.
+PASS: checkpoint file hashes and primary result/report downloads match canonical artifacts.
+No training, network call, upload, attendance or evaluator-access claim is performed by this checker.

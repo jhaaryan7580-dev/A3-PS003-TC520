@@ -1,0 +1,13 @@
+{
+  "recorded_by": "scripts/verify_release.py packaging task",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.38+-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1",
+    "matplotlib": "3.11.2"
+  },
+  "network_claim": "No live network or remote service was used by the saved-results replay.",
+  "training_claim": "Default demo mode replays precomputed saved audited results; no live training is implied."
+}

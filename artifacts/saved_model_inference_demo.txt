@@ -1,0 +1,11 @@
+{
+  "mode": "actual saved-model forward pass; no retraining",
+  "condition": "fedavg_non_iid",
+  "seed": 0,
+  "global_target_index": 15189,
+  "forecast_flow": 186.37592180221702,
+  "persistence_reference": 179.0,
+  "observed_flow_if_dataset": 193.0,
+  "model_float32_payload_bytes": 2052,
+  "note": "Benchmark one-step inference; not a deployed city model or privacy guarantee. Predictions are not clipped."
+}

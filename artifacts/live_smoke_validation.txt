@@ -1,0 +1,7 @@
+EXPLICIT SMOKE RUN: delegating to immutable src/run_experiments.py; output is not audited full/diagnostic evidence
+centralised    seed 0  test MAE 21.945  RMSE 30.841
+local_iid      seed 0  test MAE 32.682  RMSE 44.280
+local_non_iid  seed 0  test MAE 31.093  RMSE 40.622
+fedavg_iid     seed 0  test MAE 23.624  RMSE 32.514
+fedavg_non_iid seed 0  test MAE 30.283  RMSE 41.584
+PASS: all checks passed

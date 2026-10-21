@@ -1,0 +1,44 @@
+
+> chaurahalab@1.0.0 check /home/ubuntu/chaurahalab
+> tsc --noEmit
+
+
+> chaurahalab@1.0.0 test /home/ubuntu/chaurahalab
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/chaurahalab
+
+stdout | client/src/lib/engine.test.ts > centralised browser/NumPy parity > verifies the supplied checkpoint and predicts all 40 diagnostic histories
+[unit parity] centralised: max abs difference 0.00006937437751730613
+
+stdout | client/src/lib/engine.test.ts > fedavg_non_iid browser/NumPy parity > verifies the supplied checkpoint and predicts all 40 diagnostic histories
+[unit parity] fedavg_non_iid: max abs difference 0.00004335898594831633
+
+ ✓ client/src/lib/engine.test.ts (9 tests) 31ms
+ ✓ client/src/lib/comparison.test.ts (7 tests) 18ms
+ ✓ client/src/lib/dataset.test.ts (6 tests) 361ms
+
+ Test Files  3 passed (3)
+      Tests  22 passed (22)
+   Start at  16:23:42
+   Duration  758ms (transform 175ms, setup 0ms, collect 281ms, tests 410ms, environment 1ms, prepare 236ms)
+
+
+> chaurahalab@1.0.0 build:static /home/ubuntu/chaurahalab
+> vite build
+
+vite v7.1.9 building for production...
+transforming...
+✓ 2199 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                   0.67 kB │ gzip:   0.41 kB
+../dist/public/assets/index-C_sYXlcQ.css   20.07 kB │ gzip:   5.05 kB
+../dist/public/assets/index-DCYWQ-6y.js   655.50 kB │ gzip: 191.08 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.07s
