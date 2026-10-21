@@ -1,0 +1,188 @@
+{
+  "condition": "fedavg_non_iid",
+  "seed": 0,
+  "partition_used": "non_iid",
+  "metadata": {
+    "dataset_sha256": "e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075",
+    "code_commit": "unavailable (not a git repository)",
+    "config_hash": "4c681fab3e980514f3d7b1d26c91c0be510da7bd5f9ed9583a9be905bc076f42",
+    "config": {
+      "epochs": 2,
+      "rounds": 3,
+      "local_epochs": 1,
+      "batch": 1024,
+      "lr": 0.001,
+      "seeds": [
+        0
+      ],
+      "horizon": 1,
+      "lags": 12,
+      "n_clients": 5,
+      "subsample_train": 100000
+    },
+    "seed": 0,
+    "zero_policy": "complete_case_windows",
+    "horizon": 1,
+    "lags": 12,
+    "eligible_samples": {
+      "train": 100000,
+      "val": 448263,
+      "test": 448533
+    },
+    "checkpoint_rule": "minimum validation MAE; test scored once after selection",
+    "optimizer": "Adam lr=0.001 batch=1024 MSE on scaled flow",
+    "training_schedule": {
+      "centralised/local epochs": 2,
+      "fedavg rounds": 3,
+      "fedavg local epochs": 1
+    },
+    "scaler": {
+      "mean": 231.02791173468833,
+      "std": 145.488614559463
+    },
+    "model_params": 513,
+    "training_flow_upload_reference_bytes": 8499320
+  },
+  "best_checkpoint": {
+    "val_mae": 30.57436180114746,
+    "round": 3
+  },
+  "history": [
+    {
+      "round": 1,
+      "val_mae": 92.50888061523438,
+      "val_loss_scaled": 0.6148050595862016,
+      "val_mae_per_client": [
+        138.7464141845703,
+        58.78526306152344,
+        60.835906982421875,
+        81.30715942382812,
+        124.81510162353516
+      ],
+      "round_bytes": 20520,
+      "cumulative_bytes": 20520
+    },
+    {
+      "round": 2,
+      "val_mae": 42.104095458984375,
+      "val_loss_scaled": 0.14773269166610445,
+      "val_mae_per_client": [
+        52.69103240966797,
+        25.50467300415039,
+        30.372211456298828,
+        40.359161376953125,
+        62.02421569824219
+      ],
+      "round_bytes": 20520,
+      "cumulative_bytes": 41040
+    },
+    {
+      "round": 3,
+      "val_mae": 30.57436180114746,
+      "val_loss_scaled": 0.08313446265857972,
+      "val_mae_per_client": [
+        43.397525787353516,
+        22.356983184814453,
+        23.918588638305664,
+        27.525007247924805,
+        36.21961212158203
+      ],
+      "round_bytes": 20520,
+      "cumulative_bytes": 61560
+    }
+  ],
+  "communication": {
+    "bytes_per_round": 20520,
+    "total_bytes": 61560,
+    "model_payload_bytes": 2052,
+    "clients": 5,
+    "rounds": 3,
+    "client_train_samples": [
+      19309,
+      20065,
+      20265,
+      20275,
+      20086
+    ]
+  },
+  "test": {
+    "overall": {
+      "mae": 30.28344751092154,
+      "rmse": 41.584323249244896,
+      "relative_abs_error": 0.1297407734898936,
+      "n": 448533
+    },
+    "per_client_iid": {
+      "clients": [
+        {
+          "mae": 28.754066660309814,
+          "rmse": 38.89040417529218,
+          "relative_abs_error": 0.11028930273389279,
+          "n": 90648
+        },
+        {
+          "mae": 31.03333361073881,
+          "rmse": 42.543489723880256,
+          "relative_abs_error": 0.1355917124369456,
+          "n": 89307
+        },
+        {
+          "mae": 31.264328013513826,
+          "rmse": 43.109947516428164,
+          "relative_abs_error": 0.1470325770261732,
+          "n": 89721
+        },
+        {
+          "mae": 30.353186481105748,
+          "rmse": 41.072875581911156,
+          "relative_abs_error": 0.1263309288664777,
+          "n": 90484
+        },
+        {
+          "mae": 30.027140685065696,
+          "rmse": 42.215944360197426,
+          "relative_abs_error": 0.13400023871629457,
+          "n": 88373
+        }
+      ],
+      "gap_relative_error": 0.036743274292280415,
+      "gap_mae": 2.5102613532040117
+    },
+    "per_client_non_iid": {
+      "clients": [
+        {
+          "mae": 43.31852911975316,
+          "rmse": 56.80868971470645,
+          "relative_abs_error": 0.4419346771248564,
+          "n": 86252
+        },
+        {
+          "mae": 21.859283046258064,
+          "rmse": 30.591064236540948,
+          "relative_abs_error": 0.11754964664097448,
+          "n": 90550
+        },
+        {
+          "mae": 22.946781087662455,
+          "rmse": 30.547283228877752,
+          "relative_abs_error": 0.10022361076078744,
+          "n": 90559
+        },
+        {
+          "mae": 26.921514372227705,
+          "rmse": 36.44145994407235,
+          "relative_abs_error": 0.09540965401586285,
+          "n": 90494
+        },
+        {
+          "mae": 36.979031725694846,
+          "rmse": 47.87755001049725,
+          "relative_abs_error": 0.1012039754617179,
+          "n": 90678
+        }
+      ],
+      "gap_relative_error": 0.3465250231089936,
+      "gap_mae": 21.459246073495095
+    }
+  }
+}

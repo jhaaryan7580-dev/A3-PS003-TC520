@@ -1,0 +1,227 @@
+{
+  "condition": "local_non_iid",
+  "seed": 0,
+  "partition_used": "non_iid",
+  "metadata": {
+    "dataset_sha256": "e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075",
+    "code_commit": "unavailable (not a git repository)",
+    "config_hash": "4c681fab3e980514f3d7b1d26c91c0be510da7bd5f9ed9583a9be905bc076f42",
+    "config": {
+      "epochs": 2,
+      "rounds": 3,
+      "local_epochs": 1,
+      "batch": 1024,
+      "lr": 0.001,
+      "seeds": [
+        0
+      ],
+      "horizon": 1,
+      "lags": 12,
+      "n_clients": 5,
+      "subsample_train": 100000
+    },
+    "seed": 0,
+    "zero_policy": "complete_case_windows",
+    "horizon": 1,
+    "lags": 12,
+    "eligible_samples": {
+      "train": 100000,
+      "val": 448263,
+      "test": 448533
+    },
+    "checkpoint_rule": "minimum validation MAE; test scored once after selection",
+    "optimizer": "Adam lr=0.001 batch=1024 MSE on scaled flow",
+    "training_schedule": {
+      "centralised/local epochs": 2,
+      "fedavg rounds": 3,
+      "fedavg local epochs": 1
+    },
+    "scaler": {
+      "mean": 231.02791173468833,
+      "std": 145.488614559463
+    },
+    "model_params": 513,
+    "training_flow_upload_reference_bytes": 8499320
+  },
+  "best_checkpoint": {
+    "per_client": [
+      {
+        "client": 0,
+        "epoch": 2,
+        "val_mae": 35.283782958984375,
+        "n_train": 19309
+      },
+      {
+        "client": 1,
+        "epoch": 2,
+        "val_mae": 31.070770263671875,
+        "n_train": 20065
+      },
+      {
+        "client": 2,
+        "epoch": 2,
+        "val_mae": 27.92630958557129,
+        "n_train": 20265
+      },
+      {
+        "client": 3,
+        "epoch": 2,
+        "val_mae": 29.99517250061035,
+        "n_train": 20275
+      },
+      {
+        "client": 4,
+        "epoch": 2,
+        "val_mae": 34.9925422668457,
+        "n_train": 20086
+      }
+    ]
+  },
+  "history": [
+    {
+      "client": 0,
+      "epoch": 1,
+      "train_loss_scaled": 2.2709602869141916,
+      "val_mae": 120.9852066040039
+    },
+    {
+      "client": 0,
+      "epoch": 2,
+      "train_loss_scaled": 0.3659547024764487,
+      "val_mae": 35.283782958984375
+    },
+    {
+      "client": 1,
+      "epoch": 1,
+      "train_loss_scaled": 0.5870757447809151,
+      "val_mae": 51.14585876464844
+    },
+    {
+      "client": 1,
+      "epoch": 2,
+      "train_loss_scaled": 0.10504050892207642,
+      "val_mae": 31.070770263671875
+    },
+    {
+      "client": 2,
+      "epoch": 1,
+      "train_loss_scaled": 0.47512818657260386,
+      "val_mae": 53.79819107055664
+    },
+    {
+      "client": 2,
+      "epoch": 2,
+      "train_loss_scaled": 0.09356583837454523,
+      "val_mae": 27.92630958557129
+    },
+    {
+      "client": 3,
+      "epoch": 1,
+      "train_loss_scaled": 0.7155797269523803,
+      "val_mae": 64.49655151367188
+    },
+    {
+      "client": 3,
+      "epoch": 2,
+      "train_loss_scaled": 0.13594477794529367,
+      "val_mae": 29.99517250061035
+    },
+    {
+      "client": 4,
+      "epoch": 1,
+      "train_loss_scaled": 1.382746386453498,
+      "val_mae": 85.52021026611328
+    },
+    {
+      "client": 4,
+      "epoch": 2,
+      "train_loss_scaled": 0.20502171123194665,
+      "val_mae": 34.9925422668457
+    }
+  ],
+  "communication": {
+    "bytes_per_round": 0,
+    "total_bytes": 0,
+    "note": "no model exchange"
+  },
+  "test": {
+    "overall": {
+      "mae": 31.0930482726541,
+      "rmse": 40.622060538869235,
+      "relative_abs_error": 0.13320927650651046,
+      "n": 448533
+    },
+    "per_client_iid": {
+      "clients": [
+        {
+          "mae": 30.67313779665731,
+          "rmse": 40.489208248738585,
+          "relative_abs_error": 0.1176501056430916,
+          "n": 90648
+        },
+        {
+          "mae": 31.756259708243967,
+          "rmse": 41.00794115529364,
+          "relative_abs_error": 0.1387503414374782,
+          "n": 89307
+        },
+        {
+          "mae": 30.637833951468963,
+          "rmse": 39.63107899657675,
+          "relative_abs_error": 0.14408624674220757,
+          "n": 89721
+        },
+        {
+          "mae": 31.32806844820015,
+          "rmse": 40.89752575709219,
+          "relative_abs_error": 0.13038841866297327,
+          "n": 90484
+        },
+        {
+          "mae": 31.075071511617097,
+          "rmse": 41.07460210773953,
+          "relative_abs_error": 0.13867677393451108,
+          "n": 88373
+        }
+      ],
+      "gap_relative_error": 0.026436141099115976,
+      "gap_mae": 1.1184257567750038
+    },
+    "per_client_non_iid": {
+      "clients": [
+        {
+          "mae": 34.460865309490124,
+          "rmse": 41.99570877499469,
+          "relative_abs_error": 0.3515689866082753,
+          "n": 86252
+        },
+        {
+          "mae": 30.015802773411213,
+          "rmse": 39.11615392443517,
+          "relative_abs_error": 0.16141183597801773,
+          "n": 90550
+        },
+        {
+          "mae": 25.9413970448218,
+          "rmse": 34.28232516667819,
+          "relative_abs_error": 0.11330305850214187,
+          "n": 90559
+        },
+        {
+          "mae": 29.27715844766933,
+          "rmse": 39.32889136515873,
+          "relative_abs_error": 0.10375803973870525,
+          "n": 90494
+        },
+        {
+          "mae": 35.92243513891384,
+          "rmse": 47.3238132389842,
+          "relative_abs_error": 0.09831228873950397,
+          "n": 90678
+        }
+      ],
+      "gap_relative_error": 0.2532566978687713,
+      "gap_mae": 9.981038094092039
+    }
+  }
+}
