@@ -1,0 +1,95 @@
+{
+  "evidence_sha256": "da355258dd59a1bc5036915b7b01022fe6a94f5d08a03852bac8ed5dc3437011",
+  "dataset_sha256": "e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075",
+  "raw_dataset_included": false,
+  "source_artifacts": [
+    {
+      "source": "results/full_results/centralised_seed0.json",
+      "source_sha256": "8dece548e91a8afd5685d6baf488f180f02ab3492a0c0bcb338e22790eb710ff"
+    },
+    {
+      "source": "results/full_results/centralised_seed1.json",
+      "source_sha256": "e3792f3745ff4bec1e04a1715408e7f43f3f4b5a89f354401e3d9cffcba79a5e"
+    },
+    {
+      "source": "results/full_results/centralised_seed2.json",
+      "source_sha256": "04234c195e35ee1ee52dc42be5fcca642c3b8a3293f5e05433f9d081be5a1a1e"
+    },
+    {
+      "source": "results/full_results/fedavg_iid_seed0.json",
+      "source_sha256": "c294ac19bfeb0ee609a9e499304a22f79c7dd43d0f9358f7747dee41bad5da3a"
+    },
+    {
+      "source": "results/full_results/fedavg_iid_seed1.json",
+      "source_sha256": "aa3dd77bbef704820761a5c57107cb853af84c1711fe725b427bba1ccdd62ed5"
+    },
+    {
+      "source": "results/full_results/fedavg_iid_seed2.json",
+      "source_sha256": "ccf48a978c804fdbe2798415f229320a82b95d41641ea99288482d4e9f0275f9"
+    },
+    {
+      "source": "results/full_results/fedavg_non_iid_seed0.json",
+      "source_sha256": "67a49028767b9fbed7a75bc3b3e4cd87a11fa095bd03583ad277c4d5ab630905"
+    },
+    {
+      "source": "results/full_results/fedavg_non_iid_seed1.json",
+      "source_sha256": "1f0fcec1ad2ba8b4d3fe233bb801f140eb9e28925543ebfe604caa105c86d119"
+    },
+    {
+      "source": "results/full_results/fedavg_non_iid_seed2.json",
+      "source_sha256": "b2019ad57ca67b61a148580679bcf41e4ac5339b0ef5c039b8616bed27add00e"
+    },
+    {
+      "source": "results/full_results/local_iid_seed0.json",
+      "source_sha256": "22c10a77111a4e8cfc525bdbb628c91f407150afe49780ecc7164f04798d4a34"
+    },
+    {
+      "source": "results/full_results/local_iid_seed1.json",
+      "source_sha256": "3c63368f2d97f69f1f454d633dd4ccc045f2aebc9c043d49fd0b22c1fd06d101"
+    },
+    {
+      "source": "results/full_results/local_iid_seed2.json",
+      "source_sha256": "9601b5f712042513f52b7f1a9ba2e0d79ffa25adcf9e851ba0a5923debe85b35"
+    },
+    {
+      "source": "results/full_results/local_non_iid_seed0.json",
+      "source_sha256": "fd5c6d30fba02c648fb1f3a3d65c23718305261194e1f9d114de1f785c12197d"
+    },
+    {
+      "source": "results/full_results/local_non_iid_seed1.json",
+      "source_sha256": "f436eeeb838a1f49bd463692c1527f03e11a9f9ab74f9ed10c2ca267a1e8d765"
+    },
+    {
+      "source": "results/full_results/local_non_iid_seed2.json",
+      "source_sha256": "41cf4559c4cf8d3dfe2aaf08fcd22f2f0300c6e0b82bcf90f548e1109e1749dc"
+    },
+    {
+      "source": "results/diagnostic_100rounds/fedavg_iid_seed0.json",
+      "source_sha256": "b41c9db1aeb786e3900c813d3b6c2775b6cc4472904470eea127fba8e06d8648"
+    },
+    {
+      "source": "results/diagnostic_100rounds/fedavg_iid_seed1.json",
+      "source_sha256": "9ddc0fc6d9b33540b7ae25bee61ad022b1f869c8980276d643ffd9cc3d0ee66e"
+    },
+    {
+      "source": "results/diagnostic_100rounds/fedavg_iid_seed2.json",
+      "source_sha256": "71d4252c0e9aae1e3a81fecd7e3ddb734cb50853ff730186e38bab4939d6c7cd"
+    },
+    {
+      "source": "results/diagnostic_100rounds/fedavg_non_iid_seed0.json",
+      "source_sha256": "07851395160f570712b404d6c5bcf465749f9e2906603727e5207b332ae3e81a"
+    },
+    {
+      "source": "results/diagnostic_100rounds/fedavg_non_iid_seed1.json",
+      "source_sha256": "890f3c36fc4d4caed18f5599b1fabeac38c981e4658dd84c0df2170db08353d0"
+    },
+    {
+      "source": "results/diagnostic_100rounds/fedavg_non_iid_seed2.json",
+      "source_sha256": "3ee7858aeaee231dbd1c3f7d17876980fe837f63d48d1b4deb2c8f704ff5eaa3"
+    }
+  ],
+  "checkpoint_files": {
+    "centralised": "6f9acbfcbbf03537455ed4b0210136b1479f9c83374d63402b4864a972dc4fd2",
+    "fedavg_non_iid": "8f3add1d67fb49bf9e18b68726a21bd505474697c8228ac83d6170f695469c84"
+  }
+}
