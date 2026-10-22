@@ -20,7 +20,23 @@ The revised browser numerical/data suite passes **22 tests** plus **19 isolated 
 Prepared October 19 for the team's October 20 early upload target. See [official requirements and remaining external actions](docs/OFFICIAL_REQUIREMENTS_VERIFIED.md) and [upload order](docs/FINAL_UPLOAD_ORDER.md). No GitHub changes were performed while preparing this package.
 The [final technical run-through](docs/FINAL_RUN_THROUGH.md) covers the scientific core, all artifacts, prototype, presentation, packaging corrections and remaining account/mentor checks.
 
-Aryan Jha (team lead) and Apeksha Benneshiroor. The package identifies Dr. Monika Puttaramaiah as faculty mentor; it does not assert that she has reviewed this package or that mentoring attendance has occurred.
+## Team and contributions
+
+**Aryan Jha — Team Lead and Primary Technical Contributor**  
+Led the PS-003 problem interpretation, leakage-safe data pipeline,
+NumPy simulator, centralised/local/FedAvg implementation, experiment
+execution, three-seed audit, evaluation, browser prototype, packaging
+and final submission integration.
+
+**Apeksha Benneshiroor — Team Member**  
+Participated in team orientation and project communication. Her role is
+listed accurately without attributing technical implementation that is
+not claimed in this repository.
+
+**Dr. Monika Puttaramaiah — Faculty Mentor**  
+Faculty mentor and academic guide. This README does not claim mentor
+review or attendance unless separately recorded after the sessions.
+
 
 This is a reproducible measurement study, not a new federated-learning algorithm. A compact NumPy MLP is compared under centralised, local-only and sample-weighted FedAvg training on public PEMS08 traffic flow. Five virtual clients represent sensor groups; they are not verified physical intersections. California results are not Bengaluru results. No formal privacy guarantee or production cellular-bandwidth measurement is claimed.
 
