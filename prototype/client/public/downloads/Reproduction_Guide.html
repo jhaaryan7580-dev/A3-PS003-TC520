@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="source-sha256" content="c70f8d644b4afa751aa34710f2b75bdd7989ceafd68e4c72fd88e9392d0f4841"><title>Reproduce and verify PS-003</title><style>body{font:16px/1.65 system-ui,sans-serif;color:#17365e;background:#fff;max-width:1080px;margin:40px auto;padding:0 24px}h1,h2,h3{line-height:1.25}h2{border-top:1px solid #e4e8ed;padding-top:24px;margin-top:36px}table{border-collapse:collapse;display:block;max-width:100%;overflow:auto;font-size:14px}th,td{border:1px solid #dbe2e9;padding:8px 10px;text-align:left}th{background:#edf2f6}pre{white-space:pre-wrap;background:#f1f4f7;padding:16px;border-radius:7px}code{font-size:.9em}img{max-width:100%;height:auto}a{color:#168780}.scope,.package-ref{color:#66778a;font-size:13px}.scope{border-left:3px solid #c46635;padding:12px 18px;background:#f6f8fa}.package-ref{display:inline}</style></head><body><div class="scope">Standalone Chauraha Sync document. Figures are embedded; package-only references are labelled file paths rather than broken links. Canonical Markdown source: docs/REPRODUCE.md. Source SHA-256: c70f8d644b4afa751aa34710f2b75bdd7989ceafd68e4c72fd88e9392d0f4841. This rendering does not change scientific values.</div><h1>Reproduce and verify PS-003</h1>
+<p>This guide separates verification of supplied evidence from fresh computation. The original 15 main and six diagnostic JSONs are frozen. Never overwrite them merely to repeat an experiment. New reproduction runs may have a different actual Git commit/environment, which should be recorded honestly in their own files.</p>
+<h2>1. Environment</h2>
+<p>Use Python 3.10 or newer, preferably an isolated environment. Package validation used Python 3.12.3; library versions are recorded in <code>artifacts/environment.json</code> and <code>requirements-tested.txt</code>. The normal requirements allow supported library versions. Exact float32 neural histories can differ slightly across environments; do not change claims or fabricate matches when that happens.</p>
+<p>From the project root on Linux/macOS:</p>
+<pre><code class="language-bash">python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+</code></pre>
+<p>On Windows, activate with <code>.venv\Scripts\Activate.ps1</code> in PowerShell, or <code>.venv\Scripts\activate.bat</code> in Command Prompt. The Python entry points below are the same. Dataset download can be done through the direct link in <code>data/README.md</code>; <code>sha256sum</code> is a Linux utility, not a Python dependency.</p>
+<h2>2. Review supplied evidence without a dataset</h2>
+<pre><code class="language-bash">python -m pytest -q tests
+python scripts/verify_release.py
+python src/summarize_results.py --out artifacts/reproduced_summary
+python src/demo.py --condition fedavg_non_iid --seed 0 --rounds-to-show 3
+</code></pre>
+<p><code>verify_release.py</code> runs tests, checks all 15 main files and six diagnostic files, and verifies the preserved source/result manifest. The default demo explicitly replays saved results; it does not retrain or select a best seed. Summarisation writes full-precision CSV/JSON tables and four evidence figures <strong>only into the new isolated output folder</strong>. It rejects the release root, frozen subdirectories and nonempty output folders. Use a different fresh output name when repeating it. No NPZ is needed for this review, and the supplied reports/tables and figures must not be overwritten.</p>
+<p>Equivalent direct hash-gated checks are:</p>
+<pre><code class="language-bash">python src/check_results.py \
+  --dir results/full_results --config configs/full.json \
+  --dataset-sha256 e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075
+
+python src/check_results.py \
+  --dir results/diagnostic_100rounds \
+  --config configs/diagnostic_100rounds.json \
+  --conditions fedavg_iid fedavg_non_iid \
+  --dataset-sha256 e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075
+</code></pre>
+<p>The diagnostic contains only the two federated conditions, so its <code>--conditions</code> selection is necessary. Passing the main config to diagnostic files must fail. A checker PASS establishes artifact consistency, not independent reconstruction of all saved neural predictions.</p>
+<h2>3. Obtain the exact public dataset</h2>
+<pre><code class="language-bash">curl -L --fail --output data/PEMS08.npz \
+  https://raw.githubusercontent.com/guoshnBJTU/ASTGNN/main/data/PEMS08/PEMS08.npz
+sha256sum data/PEMS08.npz
+</code></pre>
+<p>Expected SHA-256 is <code>e1d03ce74e9fb79149e6e7c37c680214822c4a285baa2f42278cacabcd25c075</code>. The source URL and hash were rechecked on October 19. Download availability does not establish redistribution/commercial-use rights. Do not commit the raw NPZ, virtual environment or secrets.</p>
+<h2>4. Recompute data audit and non-learned baselines safely</h2>
+<pre><code class="language-bash">python scripts/reproduce_data.py
+</code></pre>
+<p>This wrapper invokes the unchanged audit and baseline functions but writes to <code>artifacts/reproduced_data/</code>, verifies the hash/window counts and compares baseline metrics to the supplied evidence. The original standalone <code>src/audit_dataset.py</code> and <code>src/baselines.py</code> overwrite their fixed <code>results/</code> filenames when run directly; use the wrapper in a frozen release.</p>
+<p>Persistence uses the last observation of the same sensor. The daily-cycle baseline uses training-only means for each <code>(sensor, global slot modulo 288)</code>; it is neither pooled across sensors nor a verified timestamp-aware predictor.</p>
+<h2>5. Fresh working-prototype smoke demonstration</h2>
+<pre><code class="language-bash">python src/demo.py --train-smoke
+python src/check_results.py --dir artifacts/demo_smoke --config configs/smoke.json
+</code></pre>
+<p>This really runs the scientific training code on the smoke schedule and writes isolated outputs. The smoke uses restricted training windows and short schedules. Its errors are not final results and must not be used for tuning or performance claims. <code>artifacts/live_smoke_validation.txt</code> records the package-preparation smoke that passed on October 19.</p>
+<h2>6. Optional representative main reproduction</h2>
+<p>If a mentor asks for fresh learned-model reproduction, start with one fixed seed and write new outputs:</p>
+<pre><code class="language-bash">python src/run_experiments.py --data data/PEMS08.npz \
+  --config configs/full.json --out artifacts/reproduced_main_seed0 \
+  --conditions centralised fedavg_non_iid --seeds 0
+</code></pre>
+<p>The selected conditions/config schedule must remain unchanged. The raw primary JSONs retain their original metadata. A new run's genuine commit/environment identifies that new run, not the historical run. Two representative seed-0 main runs were independently reproduced during the original audit; all extended runs were artifact-audited rather than independently retrained.</p>
+<h2>7. Full fresh matrix, only if genuinely required</h2>
+<pre><code class="language-bash">python src/run_experiments.py --data data/PEMS08.npz \
+  --config configs/full.json --out artifacts/reproduced_full
+python src/check_results.py --dir artifacts/reproduced_full --config configs/full.json
+</code></pre>
+<p>The five conditions × three seeds produce 15 files. Centralised and local-only use 30 epochs; FedAvg uses 30 rounds × one local epoch. Equal nominal sample passes are not identical optimisation-step or total-capacity budgets. Full retraining is unnecessary merely to inspect the release.</p>
+<h2>8. Separate extended-round diagnostic</h2>
+<pre><code class="language-bash">python src/run_experiments.py --data data/PEMS08.npz \
+  --config configs/diagnostic_100rounds.json \
+  --out artifacts/reproduced_diagnostic \
+  --conditions fedavg_iid fedavg_non_iid
+python src/check_results.py --dir artifacts/reproduced_diagnostic \
+  --config configs/diagnostic_100rounds.json \
+  --conditions fedavg_iid fedavg_non_iid
+</code></pre>
+<p>These six 100-round files are supplementary. Keep the 30-round comparison primary. The independent diagnostic audit checked all six exact first-30-round prefixes and selected checkpoints but did not independently reconstruct round-31-to-100 predictions.</p>
+<h2>Interpretation boundaries</h2>
+<p>The raw result JSONs, rather than rounded slides, govern numerical claims. Test is scored after validation selection, once per run. Sample SD is descriptive over three fixed seeds; no p-values, confidence intervals or statistical equivalence are claimed. Common evaluation groups are necessary for comparing proportional client disparities. A “noise floor” wording in the preserved decisions is interpreted as a descriptive random-partition reference, not statistical noise.</p>
+<p>Bytes are tensor payload accounting: 513 × 4 × 5 × 2 = 20,520 per round. Shared train-derived scaling, virtual clients, omitted transport overhead and zero handling are stated assumptions. No formal privacy, Bengaluru validation or production deployment is demonstrated.</p>
+<h2>Actual-account checks</h2>
+<p>The user personally uploads. Check organiser ownership, accepted collaborator/evaluator access, PDF download, the introduction video, mentoring participation and prototype demonstration in the real accounts. No GitHub push or settings change was made when preparing this package. The staged review/upload plan ends October 30; the official Level 2 window ends October 31 without a published time-of-day in the checked guideline.</p></body></html>
