@@ -73,9 +73,9 @@ Raw NPZs, local forecast receipts and temporary raw trace CSVs are excluded from
 
 ## External completion
 
-The public working demo is **[Chauraha Sync](https://chaurahalab-gzh27d5b.manus.space)**. Its initial audited publication is Manus version `c63ad641b36095e4c341de1f7634317c3ce3bcb2`; the documentation-only refresh keeps application inference/models/evidence unchanged, with publication receipts under `artifacts/`. Add this live link to the actual GitHub README for Step 10; it is already in the supplied README. The compiled executable/static files remain a file-review backup. This is not a temporary Preview URL.
+The public working demo is **[Chauraha Sync](https://chauraha-sync.jhaaryan7580.workers.dev/)**. It is deployed on Cloudflare Workers/Pages, corresponding to audited build c63ad641b36095e4c341de1f7634317c3ce3bcb2; the documentation-only refresh keeps application inference, models, and evidence unchanged, with original publication receipts under artifacts/. This live URL is referenced in the GitHub README.md and SUBMISSION_INDEX.md. The compiled executable/static files remain a file-review backup. This is a stable production deployment, not a temporary Preview URL.
 
-The hosted page includes hosting-injected analytics. Observed POST endpoints are `api.manus.im/api/user_behavior/batch_create_event_v2`, `api2.amplitude.com/2/httpapi` and `manus-analytics.com/api/send`; these are reported separately by the hosted UI auditor. No scientific application-origin POST or raw NPZ transfer was observed in the tested workflow. That is an observed boundary, not a platform-wide privacy certification. For strictly local operation, use the compiled Python launcher; the app still checks and decodes the selected NPZ in-browser.
+The Cloudflare static deployment excludes third-party hosting analytics and telemetry scripts (__manus__ tracking scripts were omitted from the production bundle). No scientific application-origin POST or raw NPZ transfer occurs in the hosted workflow. For strictly offline operation, use the compiled Python launcher; the app still checks and decodes the selected NPZ entirely in-browser. 
 
 The prepared prototype and pseudocode do **not** certify that the required mentor interaction occurred. Demonstrate them at the actual instructed session and record genuine feedback.
 
