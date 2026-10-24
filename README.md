@@ -7,7 +7,7 @@ AIORI-3 · Smart Cities · BMS College of Engineering
 
 ## Working prototype — launch without Node or retraining
 
-**Published live demo:** [Open Chauraha Sync](https://chaurahalab-gzh27d5b.manus.space). Initial audited Manus version: `c63ad641b36095e4c341de1f7634317c3ce3bcb2`; a documentation-only refresh does not change its inference code, models or evidence. Publication receipts are under `artifacts/`. Manual forecasting works immediately; select your local exact PEMS08 NPZ for held-out playback. The application reads it in-browser and has no dataset-upload endpoint. The hosted page includes platform analytics; use the compiled local launcher below for strictly local operation. This is a scientific prototype, not a deployed city traffic system.
+**Published live demo:** [Open Chauraha Sync](https://chauraha-sync.jhaaryan7580.workers.dev/). Initial audited Manus version: `c63ad641b36095e4c341de1f7634317c3ce3bcb2`; a documentation-only refresh does not change its inference code, models or evidence. Publication receipts are under `artifacts/`. Manual forecasting works immediately; select your local exact PEMS08 NPZ for held-out playback. The application reads it in-browser and has no dataset-upload endpoint. The hosted page includes platform analytics; use the compiled local launcher below for strictly local operation. This is a scientific prototype, not a deployed city traffic system.
 
 ```bash
 python prototype/launch.py
