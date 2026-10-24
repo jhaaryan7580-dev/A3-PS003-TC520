@@ -26,7 +26,7 @@ Prepared 19 October 2026 for the October 20 team upload. `[x]` means verified lo
 - [x] Browser/NumPy numerical parity within 0.001 flow units; 22 prototype numerical/data tests pass.
 - [x] Original 55 scientific/package tests and artifact guards retained; protected core source/config/results/hypothesis hashes preserved.
 - [x] Mentor pseudocode, natural demo script and judge Q&A; actual smoke commands write isolated outputs.
-- [x] Published Manus live prototype: https://chaurahalab-gzh27d5b.manus.space. Hosted-page analytics are separate from scientific app inference; use the local launcher for strictly local operation.
+- [x] Published live prototype on Cloudflare: https://chauraha-sync.jhaaryan7580.workers.dev/. Third-party analytics omitted; use the local launcher for strictly offline local operation.
 - [ ] Demonstrate the prototype and pseudocode to the instructed mentor and record genuine feedback/date.
 
 ## User-controlled external completion
