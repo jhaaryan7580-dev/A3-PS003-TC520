@@ -32,7 +32,7 @@ The exported evidence derives from the unchanged results. Scientific source live
 
 See [full operating and scope guide](../docs/PROTOTYPE_GUIDE.md), [demo script](../docs/DEMO_SCRIPT_AND_JUDGE_QA.md) and [submission index](../SUBMISSION_INDEX.md).
 
-The published counterpart is [Chauraha Sync](https://chaurahalab-gzh27d5b.manus.space), initially audited as Manus version `c63ad641b36095e4c341de1f7634317c3ce3bcb2`. The later documentation-only refresh preserves inference code, models and evidence; publication receipts are under the scientific root's `artifacts/`. The hosted page includes platform analytics; the local compiled launcher remains available for strictly local operation. Neither publication nor this local app implies mentoring attendance, real-city deployment or a model privacy guarantee. Keep source-code licensing and dataset-usage rights separate.
+The published counterpart is [Chauraha Sync](https://chauraha-sync.jhaaryan7580.workers.dev/), deployed on Cloudflare Workers/Pages, corresponding to audited prototype build c63ad641b36095e4c341de1f7634317c3ce3bcb2. The documentation-only refresh preserves inference code, models and evidence; publication receipts are under the scientific root's artifacts/. The static build excludes third-party telemetry scripts; the local compiled launcher remains available for strictly offline local operation. Neither publication nor this local app implies mentoring attendance, real-city deployment or a model privacy guarantee. Keep source-code licensing and dataset-usage rights separate.
 
 ## Requirement-focused revision
 
