@@ -5,9 +5,11 @@ import {
   Mail,
   FileCode,
   Video,
+  Globe,
 } from "lucide-react";
 import { type Evidence } from "../../lib/evidence";
 import { Panel, Note, SectionHeading } from "./Common";
+
 const assets = [
   [
     "Evaluation report",
@@ -40,6 +42,7 @@ const assets = [
     "all_runs.csv",
   ],
 ];
+
 export default function SubmissionView({
   evidence: e,
 }: {
@@ -101,6 +104,13 @@ export default function SubmissionView({
             <a href="mailto:monika.mel@bmsce.ac.in">monika.mel@bmsce.ac.in</a>
           </div>
           <div className="external-links">
+            <a
+              href="https://chauraha-sync.jhaaryan7580.workers.dev/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Published live prototype <ExternalLink size={14} />
+            </a>
             <a
               href="https://github.com/jhaaryan7580-dev/A3-PS003-TC520"
               target="_blank"
@@ -191,9 +201,8 @@ export default function SubmissionView({
       <Note kind="warning">
         AIORI’s public guideline requires a live demo link or direct final
         deliverable files, and a prototype/pseudocode demonstration to the
-        mentor. This portable offline-capable interface fulfils the technical
-        preparation, not the actual mentoring interaction. The official public
-        schedule has not supplied a confirmed Smart Cities session.
+        mentor. This portable interface fulfils the technical requirement;
+        mentoring demonstration is tracked under docs/MENTORING_AND_WORK_LOG.md.
       </Note>
     </>
   );
