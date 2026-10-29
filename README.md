@@ -3,6 +3,14 @@
 **Federated Traffic-Flow Prediction with Communication-Cost Evaluation**  
 AIORI-3 · Smart Cities · BMS College of Engineering
 
+**📺 Live Technical Demonstration (Unlisted):** [Watch the full 7-minute presentation here](https://youtu.be/yodnIlCPF_I)
+
+Current submission: complete deliverable index · corrected PDF · editable PPTX · final evaluation report.
+
+Working prototype — launch without Node or retraining
+Published live demo: Open Chauraha Sync...
+
+
 **Current submission:** [complete deliverable index](SUBMISSION_INDEX.md) · [corrected PDF](presentation/A3-PS003-TC520_Chauraha_Sync.pdf) · [editable PPTX](presentation/A3-PS003-TC520_Chauraha_Sync.pptx) · [final evaluation report](reports/FINAL_EVALUATION_REPORT.md).
 
 ## Working prototype — launch without Node or retraining
